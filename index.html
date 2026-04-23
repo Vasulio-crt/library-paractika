@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Библиотека</title>
+</head>
+<body>
+	<header class="element-main">
+		<h2>Создание книги</h2>
+		<form id="add-form" class="panel">
+			<div>
+				<label for="title">Название</label>
+				<input type="text" id="title" placeholder="Война и мир" maxlength="200" required>
+			</div>
+			<div>
+				<label for="author">Автор</label>
+				<input type="text" id="author" placeholder="Лев Толстой" maxlength="100" required>
+			</div>
+			<div>
+				<label for="year">Год издания</label>
+				<input type="number" id="year" min="-5000" max="3000" placeholder="1867" required>
+			</div>
+			<div>
+				<label for="genre">Жанр</label>
+				<select id="genre">
+					<option value="Литература">Литература</option>
+					<option value="Детские книги">Детские книги</option>
+					<option value="Детективы">Детективы</option>
+					<option value="Драма">Драма</option>
+					<option value="Комедия">Комедия</option>
+					<option value="Классика">Классика</option>
+					<option value="Повесть">Повесть</option>
+					<option value="Рассказ">Рассказ</option>
+					<option value="Реализм">Реализм</option>
+					<option value="Роман">Роман</option>
+					<option value="Сказка">Сказка</option>
+					<option value="Трагедия">Трагедия</option>
+					<option value="Ужасы">Ужасы</option>
+					<option value="Фэнтези">Фэнтези</option>
+					<option value="Мистика">Мистика</option>
+				</select>
+			</div>
+			<div>
+				<button type="submit" class="primary" id="add-book">Добавить</button>
+				<button onclick="resetForm()" class="danger" id="clear-form">Очистить форму</button>
+			</div>
+		</form>
+		<div class="panel">
+			<button class="danger" onclick="deleteAllBooks()">Удалить все книги</button>
+		</div>
+	</header>
+	<main class="element-main">
+		<h2>Книги</h2>
+		<div id="content-books">
+			<template id="temp-book">
+			<div>
+				<span class="text-pal">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+				</span>
+				<span class="button-pal">
+					<button class="primary edit-btn">Изменить</button>
+					<button class="danger delete-btn">Удалить</button>
+				</span>
+			</div>
+			</template>
+		</div>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

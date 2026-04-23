@@ -1,0 +1,94 @@
+:root {
+	--color1: #df6d21;
+	--color2: #233d4d;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-weight: bold;
+}
+
+body {
+	background-color: var(--color2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.element-main {
+	padding: 1rem;
+	max-width: 80rem;
+}
+
+#content-books {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#content-books div{
+	display: flex;
+	padding: 0.7rem;
+	margin: 0.3rem;
+	width: 25rem;
+	background-color: var(--color1);
+	border-radius: 6px;
+}
+
+.text-pal {
+	flex: 1;
+}
+
+.button-pal {
+	display: flex;
+	flex-direction: column;
+	& > button {
+		flex: 1;
+	}
+}
+
+.panel {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 8px 0;
+	padding: 8px;
+	border-radius: 6px;
+	background-color: var(--color1);
+}
+
+label {
+	font-weight: 500;
+}
+
+input {
+	padding: 8px;
+	border: none;
+	background-color: var(--color2);
+	border-radius: 4px;
+}
+input[type="number"] {
+	appearance: textfield;
+}
+
+select { 
+	padding: 8px;
+	border: none;
+	background-color: var(--color2);
+	border-radius: 4px;
+}
+
+button {
+	padding: 8px 12px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+button.primary {
+	background: darkgreen;
+}
+button.danger {
+	background: darkred;
+}
