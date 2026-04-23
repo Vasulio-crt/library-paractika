@@ -28,7 +28,7 @@ function resetForm() {
 	form.reset();
 	delete form.dataset.editIndex;
 	addBookBtn.textContent = 'Добавить';
-	clearFormBtn.textContent = 'Удалить все книги';
+	clearFormBtn.textContent = 'Очистить форму';
 	clearFormBtn.onclick = deleteAllBooks;
 	document.getElementById('title').focus();
 }
