@@ -68,3 +68,25 @@ form.addEventListener('submit', (e) => {
 	renderBooks();
 	resetForm();
 });
+
+function editBook(index) {
+	const book = books[index];
+	document.getElementById('title').value = book.title;
+	document.getElementById('author').value = book.author;
+	document.getElementById('year').value = book.year;
+	document.getElementById('genre').value = book.genre;
+
+	form.dataset.editIndex = index;
+	addBookBtn.textContent = 'Изменить';
+	clearFormBtn.textContent = 'Отменить редактирование';
+	clearFormBtn.onclick = resetForm;
+	document.getElementById('title').focus();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	const data = localStorage.getItem('books');
+	if (data) {
+		books = JSON.parse(data);
+		renderBooks();
+	}
+});
