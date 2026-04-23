@@ -83,6 +83,22 @@ function editBook(index) {
 	document.getElementById('title').focus();
 }
 
+function deleteBook(index) {
+	if (confirm(`Вы уверены, что хотите удалить книгу "${books[index].title}"?`)) {
+		books.splice(index, 1);
+		saveData(books);
+		renderBooks();
+	}
+}
+
+function deleteAllBooks() {
+	if (confirm('Вы уверены что хотите удалить все книги?')) {
+		books = [];
+		saveData(books);
+		renderBooks();
+	}
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	const data = localStorage.getItem('books');
 	if (data) {
